@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;0,900;1,600;1,700&display=swap');
+
+
+// breakpoints
+$breakpoint-320: 320px;
+$breakpoint-767: 767px;
+$breakpoint-768: 768px;
+$breakpoint-991: 991px;
+$breakpoint-992: 992px;
+$breakpoint-1023: 1023px;
+$breakpoint-1024: 1024px;
+$breakpoint-1199: 1199px;
+
+@mixin responsive($min-width, $max-width) {
+    @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+        @content;
+    }
+}
+
+
 $white : #fff;
 $grey: #ddd;
 
@@ -8,13 +27,17 @@ $grey: #ddd;
     box-sizing: border-box;
 }
 
-html{
-    font-size: 0.625rem; /*Equal 10px */
-}
+// html{
+//     font-size: 0.625rem; /*Equal 10px */
+// }
 
 body{
-    font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 2rem;
 }
 
 .header{
@@ -29,4 +52,22 @@ body{
             text-decoration: none;
         }
     }
+}
+
+
+.wrapper-border{
+    border: 1px solid $grey;
+    padding: 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@include responsive ($breakpoint-320, $breakpoint-767){
+    .wrapper-border{
+        padding: 20px;
+    }
+    
 }

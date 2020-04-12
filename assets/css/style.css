@@ -6,14 +6,13 @@
           box-sizing: border-box;
 }
 
-html {
-  font-size: 0.625rem;
-  /*Equal 10px */
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .header {
@@ -30,5 +29,21 @@ body {
 .header a:hover {
   color: #ddd;
   text-decoration: none;
+}
+
+.wrapper-border {
+  border: 1px solid #ddd;
+  padding: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .wrapper-border {
+    padding: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
