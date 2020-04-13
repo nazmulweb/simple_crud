@@ -38,13 +38,30 @@
             $stmt->bindParam(":category_id", $this->category_id);
             $stmt->bindParam(":created", $this->timestamp);
 
-            
             if($stmt->execute()){
                 return true;
             }else{
                 return false;
             }
         }
+
+        public function readAll($fromRecordNum, $recordsPerPage){
+            $query = "SELECT id, name, price, description, category_id FROM " . $this->table_name . " ORDER BY id ASC LIMIT {$fromRecordNum}, {$recordsPerPage}";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function countAll (){
+            $query = "SELECT id FROM " . $this->table_name . "";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+
+            $num = $stmt->rowCount();
+            return $num;
+
+        }
+
         
     }
 
