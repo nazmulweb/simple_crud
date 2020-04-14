@@ -67,7 +67,7 @@
                                                                     echo "<a href='update.php?id={$id}' class='btn btn-success'>Update</a>";
                                                                 echo '</li>';
                                                                 echo '<il>';
-                                                                    echo "<a href='delete.php?id={$id}' class='btn btn-danger'>Delete</a>";
+                                                                    echo "<a delete-id='{$id}' class='btn btn-danger delete-obj'>Delete</a>";
                                                                 echo '</li>';
                                                             echo '</ul>';
                                                         echo '</td>';
@@ -116,7 +116,6 @@
                                             echo "<a class='page-link' href='{$pageUrl}page={$totalPage}'>Next</a>";
                                         echo "</li>";
                                     }
-
                                 ?>
                             </ul>
                         </nav>
